@@ -9,6 +9,7 @@
 	background-color: #ece5dd;
 	max-height: 100%;
 	padding: 20px;
+	height: 100vh;
 }
 
 .login_title {
@@ -51,6 +52,10 @@
 	color: #fff;
 }
 
+.login_form button:hover {
+	background-color: #128c7e;
+}
+
 /* ChatContainer */
 .chats_header {
 	display: flex;
@@ -64,9 +69,17 @@
 
 .chats_logout {
 	color: rgb(6, 152, 152);
+	cursor: pointer;
 }
 
 /* chats list */
+
+.chats_list {
+	height: 75vh;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
 .chat_sender {
 	display: flex;
 	justify-content: flex-end;

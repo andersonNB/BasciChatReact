@@ -1,4 +1,15 @@
-export const InputText = () => {
+import {useState} from "react";
+
+type Chat = {message: string};
+
+export const InputText = ({addMessage}: {addMessage: (chat: Chat) => void}) => {
+	const [message, setMessage] = useState<string>("");
+
+	const sendMessage = () => {
+		addMessage({message});
+		setMessage("");
+	};
+
 	return (
 		<div className="inputtext_container">
 			<textarea
@@ -6,8 +17,10 @@ export const InputText = () => {
 				id="message"
 				rows={6}
 				placeholder="Input message..."
+				onChange={(e) => setMessage(e.target.value)}
+				value={message}
 			></textarea>
-			<button>Send</button>
+			<button onClick={sendMessage}>Send</button>
 		</div>
 	);
 };
